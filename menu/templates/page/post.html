@@ -1,0 +1,17 @@
+{% extends 'page/base.html' %}
+
+{% block content %}
+<div class="article-panel">
+    <p class="first">Kategoriya: {{ post.cat }}</p>
+    <p class="last">Sana: {{ post.time_update|date:"d-m-Y H:i:s" }}</p>
+</div>
+
+{% if post.photo %}
+    <p><img class="img-article-left thumb" src="{{ post.photo.url }}"></p>
+{% endif %}
+
+<h2>{{ post.title }}</h2>
+
+<p class="link-read-post">{{ post.content }}</p>
+</div>
+{% endblock %}
